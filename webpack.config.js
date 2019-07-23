@@ -30,9 +30,18 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'react'],
+            presets: ['env', 'es2015', 'react', 'stage-1'],
           },
         },
+      },
+      {
+        test: /\.(png|jpe?g|gif|ogg|wav|mp3)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
       },
     ],
   },
